@@ -1,0 +1,138 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      very terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      no
+    intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: query path
+  steps:
+  - user: |
+      give me 80 rows of job db
+    intent: select_query_with_limit
+  - action: action_get_query
+  - user: |
+      give me job status of MATCHING on date 2021-01-21
+    intent: find_status_of_job
+  - action: action_get_status
+  - user: |
+      give me the list of all incidents created on 2021-02-23
+    intent: incidents_created
+  - action: action_incidents
+  - user: |
+      show the number of jobs restarted on 2020-03-25
+    intent: restarted_jobs
+  - action: action_job_restart
+  - user: |
+      extract the list of jobs of 2020-08-31
+    intent: all_jobs
+  - action: action_all_jobs
+  - user: |
+      fetch the data of running jobs of 2021-06-02
+    intent: all_jobs_status
+  - action: action_job_status
+  - user: |
+      give the data of jobs that failed with product name IDT on 2021-04-02     
+    intent: job_status_product
+  - action: action_job_product
+  - user: |
+      give me all jobs that failed for DM_ICUE on 2020-09-10    
+    intent: job_status_name
+  - action: action_job_name
+  # - user: |
+  #     show me records of running jobs of CLAIMS product on 2019-05-18
+  #   intent: 
+  # - action:
+  # - user: |
+  #     give me all jobs that failed  DM_ICUE on 2020-09-10
+  #   intent: 
+  # - action:
+  # - user: |
+      
+  #   intent:
+  # - action:

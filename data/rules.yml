@@ -1,0 +1,73 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: If user asks for details with rows give them. 
+  steps:
+  - intent: select_query_with_limit
+  - action: action_get_query
+
+- rule: If user asks for status of MATCHING on a date
+  steps:
+  - intent: find_status_of_job
+  - action: action_get_status
+
+- rule: If user asks for list of incidents created on a date
+  steps:
+  - intent: incidents_created
+  - action: action_incidents
+
+- rule: If user asks for jobs restarted on a date
+  steps:
+  - intent: restarted_jobs
+  - action: action_job_restart
+
+- rule: If user asks for report of all jobs of a date
+  steps:
+  - intent: all_jobs
+  - action: action_all_jobs
+
+- rule: If user asks for status of jobs on a date
+  steps:
+  - intent: all_jobs_status
+  - action: action_job_status
+
+- rule: If user asks for record of all jobs with a status based on product name on a date
+  steps:
+  - intent: job_status_product
+  - action: action_job_product
+
+- rule: If user asks for record of all jobs with a status based on job name on a date
+  steps:
+  - intent: job_status_name
+  - action: action_job_name
+
+#- rule: If user asks for report of all jobs of a date
+#   steps:
+#   - intent: all_jobs
+#   - action:
+
+# - rule: If user asks for report of all jobs of a date
+#   steps:
+#   - intent: all_jobs
+#   - action:
+
+# - rule: If user asks for report of all jobs of a date
+#   steps:
+#   - intent: all_jobs
+#   - action:
+
+# - rule: If user asks for report of all jobs with jobname  of a date
+#   steps:
+#   - intent: job_status_jobname
+#   - action: 

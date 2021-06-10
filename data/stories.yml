@@ -1,0 +1,55 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: query path
+  steps:
+  - intent: select_query_with_limit
+  - action: action_get_query
+  - intent: find_status_of_job
+  - action: action_get_status
+  - intent: incidents_created
+  - action: action_incidents
+  - intent: restarted_jobs
+  - action: action_job_restart
+  - intent: all_jobs
+  - action: action_all_jobs
+  - intent: all_jobs_status
+  - action: action_job_status
+  - intent: job_status_product
+  - action: action_job_product
+  - intent: job_status_name
+  - action: action_job_name
+  # - intent:
+  # - action:
+  # - intent:
+  # - action:
+  # - intent:
+  # - action:

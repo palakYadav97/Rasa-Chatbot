@@ -1,0 +1,166 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: select_query_with_limit
+  examples: |
+    - give me [4](limit) rows of jobtracking
+    - print [5](limit) rows of jobtracking
+    - extract from jobtracking details [7](limit)
+    - give me [8](limit) rows of job db
+    - print [9](limit) rows of job db
+    - extract from job db details [20](limit)
+    - give me [20](limit) rows of db
+    - give me [80](limit) rows of  db
+- intent: find_status_of_job
+  examples: |
+    - give me status of job [MATCHING](jobname) on [2021-01-21](date)
+    - show the status of job name [ADHOC_AYB](jobname) on [2020-02-28](date)
+    - print the status of job [CDBHistory](jobname) on [2019-06-19](date)
+    - extract the status of job [CLINICAL_HEALTH_SURVEY](jobname) on [2019-11-12](date)
+    - fetch the status of [IMDM_INDEX_SERVICE_DASHBOARD](jobname) on [2020-09-10](date)
+# new ones
+- intent: incidents_created
+  examples: |
+    - give me total number of incidents created on [2021-01-21](date)
+    - show total incidents that were created on [2020-02-28](date)
+    - print total incidents created on [2019-06-19](date)
+    - extract the list of incidents created on [2019-11-12](date)
+    - give me the report of incidents created on [2020-04-30](date)
+    - fetch all incidents created on [2020-09-10](date)
+    - give me data of incidents created on [2021-03-25](date)
+- intent: restarted_jobs
+  examples: |
+    - give me total number of job that were restarted on [2021-01-21](date)
+    - show total jobs that were restarted on [2020-02-28](date)
+    - print total jobs restarted on [2019-06-19](date)
+    - extract the list of jobs restarted on [2019-11-12](date)
+    - give me the report of jobs restarted on [2020-04-30](date)
+    - fetch all restarted jobs on [2020-09-10](date)
+    - give me data of restarted jobs of [2021-03-25](date)
+- intent: all_jobs
+  examples: |
+    - give me total number of jobs of [2021-01-21](date)
+    - show total jobs of [2020-02-28](date)
+    - print all jobs of [2019-06-19](date)
+    - extract the list of jobs on [2019-11-12](date)
+    - give me report of jobs on [2020-04-30](date)
+    - fetch all jobs of [2020-09-10](date)
+    - give me data of jobs of [2021-03-25](date)
+- intent: all_jobs_status
+  examples: |
+    - give me total number of jobs [running](status) on the date [2021-01-21](date)
+    - show total jobs that are [completed](status) on [2020-02-28](date)
+    - print all jobs that [failed](status) on [2019-06-19](date)
+    - extract the list of jobs [started](status) on [2019-11-12](date)
+    - give me report of jobs [finished](status) on [2020-04-30](date)
+    - fetch all jobs [done](status) on [2020-09-10](date)
+    - give me data of jobs [started](status) on [2021-03-25](date)    
+- intent: job_status_product
+  examples: |
+    - give me total number of jobs [running](status) of product [Rally](product) on the date [2021-01-21](date)
+    - show total jobs that are [completed](status) based on product [CLINICAL_HC3](product) on [2020-02-28](date)
+    - print all jobs that [failed](status) of product name [IDT](product) on [2019-06-19](date)
+    - extract the list of jobs [started](status) of product [CLAIMS](product) on [2019-11-12](date)
+    - give me report of jobs [finished](status) of product name [CUSTOMER](product) for [2020-04-30](date)
+    - fetch all jobs [done](status) of [Common](product) product on [2020-09-10](date)
+    - give me data of jobs [started](status) of [MDM_Parser](product) product on [2021-03-25](date)
+    - give me all [started](status) jobs of product [2019-08-06](date) for [CS](product)
+- intent: job_status_name
+  examples: |
+    - give me total number of jobs [running](status) of [CDB_ELIGIBILITY_DASHBOARD](jobname) on the date [2021-01-21](date)
+    - show total jobs that are [completed](status) with [CDR_HSR_PROC_MOD](jobname) on [2020-02-28](date)
+    - print all jobs that [failed](status) of [ADHOC_AYB_MONTHLY](jobname) for [2019-06-19](date)
+    - extract the list of jobs [started](status) for [CS_HS_DIM_MEMBER](jobname) on [2019-11-12](date)
+    - give me report of jobs [finished](status) for [Claims_Med_External](jobname) on [2020-04-30](date)
+    - fetch all jobs [done](status) of [CDBHistory](jobname) on [2020-09-10](date)
+    - give me data of jobs [started](status) of [IMDM_MEMBER_INFO](jobname) on [2021-03-25](date)
+    - give me all [started](status) jobs of [2019-08-06](date) of [DM_ICUE](jobname)
+
+
+
+
+- regex: pincode
+  examples: |
+    - \d{1,1000}
