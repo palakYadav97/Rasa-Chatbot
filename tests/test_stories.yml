@@ -125,9 +125,9 @@ stories:
     intent: job_status_name
   - action: action_job_name
   # - user: |
-  #     show me records of running jobs of CLAIMS product on 2019-05-18
-  #   intent: 
-  # - action:
+  #     give me the runtime of jobs on 2019-09-10
+  #   intent: job_runtime
+  # - action: action_runtime
   # - user: |
   #     give me all jobs that failed  DM_ICUE on 2020-09-10
   #   intent: 
