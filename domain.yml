@@ -35,6 +35,9 @@ intents:
     use_entities: true
 - job_status_name:
     use_entities: true
+- job_runtime:
+    use_entities: true
+
 entities:
 - limit
 - date
@@ -65,5 +68,6 @@ actions:
 - action_job_name
 - action_incidents
 - action_job_restart
+# - action_runtime
 forms: {}
 e2e_actions: []
