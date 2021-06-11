@@ -52,10 +52,10 @@ rules:
   - intent: job_status_name
   - action: action_job_name
 
-#- rule: If user asks for report of all jobs of a date
+# - rule: If user asks for runtime of a job on a date
 #   steps:
-#   - intent: all_jobs
-#   - action:
+#   - intent: job_runtime
+#   - action: action_runtime
 
 # - rule: If user asks for report of all jobs of a date
 #   steps:
