@@ -2,10 +2,10 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-from actions.functions import get_valid_status
-from actions.functions import get_valid_date
+from functions import get_valid_status
+from functions import get_valid_date
 
-from actions.functions import limit_query
+from functions import limit_query
 class QueryByLimit(Action):
     def name(self) -> Text:
         return "action_get_query"
@@ -25,7 +25,7 @@ class QueryByLimit(Action):
         dispatcher.utter_message(text = "Hey, so we are querying " + limit + " rows from the DB, here are your results \n" + str(df))
         return []
 
-from actions.functions import show_status
+from functions import show_status
 class QueryByDateAndKey(Action):
     def name(self) -> Text:
         return "action_get_status"
@@ -49,7 +49,7 @@ class QueryByDateAndKey(Action):
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
         return []
 
-from actions.functions import get_all_jobs
+from functions import get_all_jobs
 class QueryAllByDate(Action):
     def name(self) -> Text:
         return "action_all_jobs"
@@ -69,7 +69,7 @@ class QueryAllByDate(Action):
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
         return []
     
-from actions.functions import get_by_job_status
+from functions import get_by_job_status
 class QueryAllByDateAndStatus(Action):
     def name(self) -> Text:
         return "action_job_status"
@@ -93,7 +93,7 @@ class QueryAllByDateAndStatus(Action):
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
         return []
 
-from actions.functions import get_by_product
+from functions import get_by_product
 class QueryAllByDateStatusAndProduct(Action):
     def name(self) -> Text:
         return "action_job_product"
@@ -121,7 +121,7 @@ class QueryAllByDateStatusAndProduct(Action):
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
         return []
 
-from actions.functions import get_by_name
+from functions import get_by_name
 class QueryAllByDateStatusAndJobName(Action):
     def name(self) -> Text:
         return "action_job_product"
@@ -149,7 +149,7 @@ class QueryAllByDateStatusAndJobName(Action):
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
         return []
 
-from actions.functions import get_incident
+from functions import get_incident
 class QueryAllIncidentsByDate(Action):
     def name(self) -> Text:
         return "action_incidents"
@@ -169,7 +169,7 @@ class QueryAllIncidentsByDate(Action):
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
         return []
 
-from actions.functions import get_restart
+from functions import get_restart
 class QueryAllRestartJobsByDate(Action):
     def name(self) -> Text:
         return "action_job_restart"
