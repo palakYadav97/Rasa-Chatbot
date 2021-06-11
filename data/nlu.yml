@@ -95,68 +95,138 @@ nlu:
     - give me [80](limit) rows of  db
 - intent: find_status_of_job
   examples: |
-    - give me status of job [MATCHING](jobname) on [2021-01-21](date)
-    - show the status of job name [ADHOC_AYB](jobname) on [2020-02-28](date)
-    - print the status of job [CDBHistory](jobname) on [2019-06-19](date)
-    - extract the status of job [CLINICAL_HEALTH_SURVEY](jobname) on [2019-11-12](date)
+    - give me status of job [MATCHING](jobname) of [today](date)
+    - show the status of job name [ADHOC_AYB](jobname) of [yesterday](date)
+    - print the status of job [CDBHistory](jobname) on [27th april 2019](date)
+    - extract the status for job [CLINICAL_HEALTH_SURVEY](jobname) on [day before yesterday](date)
     - fetch the status of [IMDM_INDEX_SERVICE_DASHBOARD](jobname) on [2020-09-10](date)
-# new ones
+    - I need the status of [MATCHING](jobname) job on [may 4 2021](date)
+    - I am looking for status of [IMDM](jobname) on [2020-10-19](date)
+    - what is the status for [CDB](jobname) on [7 sept 2020](date)?
+    - What's the status of [CLINICAL](jobname) on [august 31 2020](date)?
+    - please get me the status of [INDEX](jobname) job on [2020-09-09](date)
+    - can i have the status of [SURVEY](jobname) on [15th feb 2020](date)?
+    - can you show me the status of job [MATCHING](jobname) on [2021-03-27](date)?
 - intent: incidents_created
   examples: |
-    - give me total number of incidents created on [2021-01-21](date)
+    - give me total number of incidents created on [jan 2nd, 2021](date)
     - show total incidents that were created on [2020-02-28](date)
-    - print total incidents created on [2019-06-19](date)
-    - extract the list of incidents created on [2019-11-12](date)
+    - print total incidents created on [today](date)
+    - extract the list of incidents created on [yesterday](date)
     - give me the report of incidents created on [2020-04-30](date)
-    - fetch all incidents created on [2020-09-10](date)
+    - fetch all incidents created on [day before yesterday](date)
     - give me data of incidents created on [2021-03-25](date)
+    - I need the list of incidents that were created on [5th aug 2020](date)
+    - I am looking for the incidents created on [2021-02-23](date)
+    - what is the list of incidents that were created on [3rd july 2019](date)?
+    - What's the report of incidents created on [today](date)?
+    - please get me the list of incidents created on [2021-02-28](date)
+    - can i have the report of incidents created on [april 4th 2019](date)?
+    - can you show me the all the incidents that were created on [2021-03-27](date)?
 - intent: restarted_jobs
   examples: |
-    - give me total number of job that were restarted on [2021-01-21](date)
+    - give me total number of job that were restarted on [june 4th, 2021](date)
     - show total jobs that were restarted on [2020-02-28](date)
-    - print total jobs restarted on [2019-06-19](date)
+    - print total jobs restarted on [6th sept 2020](date)
     - extract the list of jobs restarted on [2019-11-12](date)
-    - give me the report of jobs restarted on [2020-04-30](date)
+    - give me the report of jobs restarted on [yesterday](date)
     - fetch all restarted jobs on [2020-09-10](date)
-    - give me data of restarted jobs of [2021-03-25](date)
+    - give me data of restarted jobs of [yesterday](date)
+    - I need the report of jobs that restarted on [2019-12-12](date)
+    - I am looking for the list of jobs that were restarted on [today](date)
+    - what is the report of restarted jobs on [2021-03-09](date)?
+    - What's the list of jobs restarted on [2nd jan 2021](date)?
+    - please get me the list of restarted jobs of [2021-02-28](date)
+    - can i have all the jobs restarted on [day before yesterday](date)?
+    - can you show me all the jobs that were restarted on [2021-03-27](date)?
 - intent: all_jobs
   examples: |
-    - give me total number of jobs of [2021-01-21](date)
+    - give me total number of jobs of [today](date)
     - show total jobs of [2020-02-28](date)
-    - print all jobs of [2019-06-19](date)
-    - extract the list of jobs on [2019-11-12](date)
+    - print all jobs of [day before yesterday](date)
+    - extract the list of jobs on [august 4th 2020](date)
     - give me report of jobs on [2020-04-30](date)
     - fetch all jobs of [2020-09-10](date)
-    - give me data of jobs of [2021-03-25](date)
+    - give me data of jobs of yesterday](date)
+    - I need the list of jobs on [2019-12-12](date)
+    - I am looking for all jobs on [15th march 2020](date)
+    - what are the total jobs on [2020-05-25](date)?
+    - Which are the jobs on [yesterday](date)?
+    - please get me the list of jobs on [2020-09-09](date)
+    - can i have the report of jobs of [4th july 2019](date)?
+    - can you show me all the jobs of [2020-09-10](date)?
 - intent: all_jobs_status
   examples: |
     - give me total number of jobs [running](status) on the date [2021-01-21](date)
     - show total jobs that are [completed](status) on [2020-02-28](date)
-    - print all jobs that [failed](status) on [2019-06-19](date)
+    - print all jobs that [failed](status) on [yesterday](date)
     - extract the list of jobs [started](status) on [2019-11-12](date)
-    - give me report of jobs [finished](status) on [2020-04-30](date)
+    - give me report of [finished](status) jobs for [today](date)
     - fetch all jobs [done](status) on [2020-09-10](date)
-    - give me data of jobs [started](status) on [2021-03-25](date)    
+    - give me data of jobs [started](status) on [day before yesterday](date) 
+    - I need the list of jobs [failed](status) on [2019-12-12](date)
+    - I am looking for report of all [completed](status) jobs on [2021-02-23](date)
+    - what is the list of [running](status) jobs on [2021-04-28](date)?
+    - What's the list of jobs [done](status) on [2020-12-06](date)?
+    - please get me the report of jobs [failed](status) on [2020-10-26](date)
+    - can i have the list of jobs [completed](status) on [3rd september 2020](date)?
+    - can you show me all the [finished](status) jobs of [09 aug 2019](date)?
 - intent: job_status_product
   examples: |
     - give me total number of jobs [running](status) of product [Rally](product) on the date [2021-01-21](date)
     - show total jobs that are [completed](status) based on product [CLINICAL_HC3](product) on [2020-02-28](date)
     - print all jobs that [failed](status) of product name [IDT](product) on [2019-06-19](date)
     - extract the list of jobs [started](status) of product [CLAIMS](product) on [2019-11-12](date)
-    - give me report of jobs [finished](status) of product name [CUSTOMER](product) for [2020-04-30](date)
+    - give me report of [finished](status) jobs of product name [CUSTOMER](product) for [day before yesterday](date)
     - fetch all jobs [done](status) of [Common](product) product on [2020-09-10](date)
-    - give me data of jobs [started](status) of [MDM_Parser](product) product on [2021-03-25](date)
-    - give me all [started](status) jobs of product [2019-08-06](date) for [CS](product)
+    - give me data of jobs [started](status) of [MDM_Parser](product) product on [yesterday](date)
+    - give me all [started](status) jobs on [2019-08-06](date) for product [CS](product)
+    - I need the report of jobs [failed](status) on [oct 7 2019](date) of product [Rally](product)
+    - I am looking for list of [running](status) jobs for product name [CLAIMS](product) on [4th dec 2020](date)
+    - what is the report of jobs [completed](status) for product [Common](product) on [2021-04-20](date)?
+    - What's the list of [finished](status) jobs of [MDM](product) product on [2019-12-14](date)?
+    - please get me the list of jobs [running](status) of [CLAIMS](product) product on [2020-08-08](date)
+    - can i have the report of jobs [finished](status) on [23rd feb 2021](date) of product name [Parser](product)?
+    - can you show me all the [completed](status) jobs of product [IDT](product) on [today](date)?
 - intent: job_status_name
   examples: |
     - give me total number of jobs [running](status) of [CDB_ELIGIBILITY_DASHBOARD](jobname) on the date [2021-01-21](date)
-    - show total jobs that are [completed](status) with [CDR_HSR_PROC_MOD](jobname) on [2020-02-28](date)
-    - print all jobs that [failed](status) of [ADHOC_AYB_MONTHLY](jobname) for [2019-06-19](date)
-    - extract the list of jobs [started](status) for [CS_HS_DIM_MEMBER](jobname) on [2019-11-12](date)
-    - give me report of jobs [finished](status) for [Claims_Med_External](jobname) on [2020-04-30](date)
-    - fetch all jobs [done](status) of [CDBHistory](jobname) on [2020-09-10](date)
+    - show total jobs that are [completed](status) with [CDR_HSR_PROC_MOD](jobname) on [yesterday](date)
+    - print all jobs that [failed](status) of [ADHOC_AYB_MONTHLY](jobname) for [today](date)
+    - extract the list of jobs [started](status) for [CS_HS_DIM_MEMBER](jobname) on [today](date)
+    - give me report of [Claims_Med_External](jobname) jobs that were [finished](status) on [2020-04-30](date)
+    - fetch all jobs [done](status) of [CDBHistory](jobname) on [jan 5 2021](date)
     - give me data of jobs [started](status) of [IMDM_MEMBER_INFO](jobname) on [2021-03-25](date)
-    - give me all [started](status) jobs of [2019-08-06](date) of [DM_ICUE](jobname)
+    - give me all [started](status) jobs on [2019-08-06](date) of [DM_ICUE](jobname)
+    - I need the report of jobs [failed](status) on [2019-12-12](date) of [yesterday](jobname)
+    - I am looking for the [CDB](jobname) jobs [completed](status) on [july 8 2019](date) 
+    - what is the list of [CDR](jobname) jobs that were [finished](status) on [2021-02-06](date)?
+    - What's the data of jobs [completed](status) on [2019-11-20](date) of [day before yesterday](jobname)?
+    - please get me the list of jobs [running](status) of [INFO](jobname) on [2nd june 2020](date)
+    - can i have the report of jobs [finished](status) on [2021-01-01](date) of [DIM](jobname)?
+    - can you show me all the [completed](status) jobs of [ADHOC](jobname) on [6th july 2019](date)?
+- intent: job_runtime
+  examples: |
+    - what is the runtime of jobs on [2019-05-21](date)?
+    - give me the running time of jobs on [2020-04-23](date)
+    - show me the run time of jobs on [2021-02-07](date)
+    - what's the runtime of jobs on [2020-02-17](date)?
+    - show the time taken time by jobs on [2020-06-07](date)
+    - fetch the run time of jobs on [2019-05-25](date)
+    - extract the total time taken by jobs on [2020-12-16](date)
+    - print the running time by jobs on [2019-06-07](date)
+    - I need the run time of jobs on [2021-02-014](date)
+    - get me the exact running time of jobs on [2020-11-29](date)
+    - I am looking for the runtime of jobs on [2019-09-30](date)
+    - what is the time taken by jobs on [2020-02-28](date)?
+    - What's the running time of jobs on [2020-09-07](date)?
+    - please get me the time taken by jobs on [2019-01-31](date)
+    - can i have the runtime of jobs on [2020-09-07](date)?
+    - can you show me the time taken by jobs on [2019-08-21](date)?
+# - intent:
+#   examples: |
+
+
 
 
 
