@@ -163,7 +163,7 @@ nlu:
     - extract the list of jobs [started](status) on [2019-11-12](date)
     - give me report of [finished](status) jobs for [today](date)
     - fetch all jobs [done](status) on [2020-09-10](date)
-    - give me data of jobs [started](status) on [day before yesterday](date) 
+    - give me data of jobs [started](status) on [day before yesterday](date)
     - I need the list of jobs [failed](status) on [2019-12-12](date)
     - I am looking for report of all [completed](status) jobs on [2021-02-23](date)
     - what is the list of [running](status) jobs on [2021-04-28](date)?
@@ -171,6 +171,7 @@ nlu:
     - please get me the report of jobs [failed](status) on [2020-10-26](date)
     - can i have the list of jobs [completed](status) on [3rd september 2020](date)?
     - can you show me all the [finished](status) jobs of [09 aug 2019](date)?
+    - get me the records for [finished](status) jobs for [5th feb 2021](date)
 - intent: job_status_product
   examples: |
     - give me total number of jobs [running](status) of product [Rally](product) on the date [2021-01-21](date)
@@ -199,23 +200,24 @@ nlu:
     - give me data of jobs [started](status) of [IMDM_MEMBER_INFO](jobname) on [2021-03-25](date)
     - give me all [started](status) jobs on [2019-08-06](date) of [DM_ICUE](jobname)
     - I need the report of jobs [failed](status) on [2019-12-12](date) of [yesterday](jobname)
-    - I am looking for the [CDB](jobname) jobs [completed](status) on [july 8 2019](date) 
+    - I am looking for the [CDB](jobname) jobs [completed](status) on [july 8 2019](date)
     - what is the list of [CDR](jobname) jobs that were [finished](status) on [2021-02-06](date)?
     - What's the data of jobs [completed](status) on [2019-11-20](date) of [day before yesterday](jobname)?
     - please get me the list of jobs [running](status) of [INFO](jobname) on [2nd june 2020](date)
     - can i have the report of jobs [finished](status) on [2021-01-01](date) of [DIM](jobname)?
     - can you show me all the [completed](status) jobs of [ADHOC](jobname) on [6th july 2019](date)?
+    - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [2021-01-21](date)
 - intent: job_runtime
   examples: |
     - what is the runtime of jobs on [2019-05-21](date)?
-    - give me the running time of jobs on [2020-04-23](date)
-    - show me the run time of jobs on [2021-02-07](date)
+    - give me the running time of jobs on [23rd may 2021](date)
+    - show me the run time of jobs on [feb 3 2020](date)
     - what's the runtime of jobs on [2020-02-17](date)?
     - show the time taken time by jobs on [2020-06-07](date)
     - fetch the run time of jobs on [2019-05-25](date)
     - extract the total time taken by jobs on [2020-12-16](date)
     - print the running time by jobs on [2019-06-07](date)
-    - I need the run time of jobs on [2021-02-014](date)
+    - I need the run time of jobs on [2021-02-14](date)
     - get me the exact running time of jobs on [2020-11-29](date)
     - I am looking for the runtime of jobs on [2019-09-30](date)
     - what is the time taken by jobs on [2020-02-28](date)?
@@ -223,14 +225,37 @@ nlu:
     - please get me the time taken by jobs on [2019-01-31](date)
     - can i have the runtime of jobs on [2020-09-07](date)?
     - can you show me the time taken by jobs on [2019-08-21](date)?
-# - intent:
-#   examples: |
-
-
-
-
-
-
+- intent: latest_job_status
+  examples: |
+    - give me the status of latest job [MATCHING](jobname) on [2021-07-08](date)
+    - print me the status of latest job [ADHOC_AYB_MONTHLY](jobname) on [2021-07-08](date)
+    - extract the status of latest job [C3_SNI](jobname) on [2021-07-08](date)
+    - retrieve me the status of latest job [CDB_ELIGIBILITY](jobname) on [2021-07-08](date)
+    - show me the status of latest job [CDB_ELIGIBILITY_DASHBOARD](jobname) on [2021-07-08](date)
+    - I am looking for the status of the latest job [ADHOC](jobname) for [yesterday](date)
+    - I wanted the status of latest job [C3](jobname) for [yesterday](date)
+    - I need the status of latest job [MATCHING](jobname) for [today](date)
+    - fetch the status of latest job [ADHOC](jobname) for [day before yesterday](date)
+    - can i get the status of latest job [C3_SNI](jobname) for [20 Jan 2021](date)
+    - can you show me the status of latest job [CDB](jobname) for [Jan 21 2021](date)
+    - what's the status of latest job [MATCHING](jobname) for [today](date)
+    - What is the status of latest job [ADHOC](jobname) for [2021 Jan 21](date)
+    - please get me the status of latest job [C3_SNI](jobname) for [today](date)
+- intent: sub_job_details
+  examples: |
+    - give me the details of sub-jobs for main job [MATCHING](jobname) on [2021-07-08](date)
+    - print the details of sub-jobs of [ADHOC_AYB_MONTHLY](jobname) for [2021-07-08](date)
+    - extract the details of sub-jobs for job [C3_SNI](jobname) on date [2021 Jan 21](date)
+    - retrieve me details about sub-jobs of the main job [CDB_ELIGIBILITY](jobname) on [2021-07-08](date)
+    - show me details of sub jobs for the job [CDB_ELIGIBILITY_DASHBOARD](jobname) on date [2021-07-08](date)
+    - get me the details of sub-jobs of the job [ADHOC_AYB_MONTHLY](jobname) on [May 4 2021](date)
+    - can you fetch me details of sub-jobs of job [C3_SNI](jobname) for [2021-07-08](date)
+    - can i have the details of sub-jobs of the parent job [CDB_ELIGIBILITY](jobname) on [20 Jan 2021](date)
+    - show me the details of sub-jobs of this job named [CDB_ELIGIBILITY_DASHBOARD](jobname) on [2021-07-08](date)
+    - what are the details of sub jobs of [C3](jobname) on [today](date)
+    - please tell me the details of sub jobs wrt [CDB](jobname) on [yesterday](date)
+    - I need the details of subjobs of [ADHOC](jobname) for [day before yesterday](date)
+    - I am looking for details of sub-jobs with respect to [MATCHING](jobname) for [Jan 20 2021](date)
 - regex: pincode
   examples: |
     - \d{1,1000}
