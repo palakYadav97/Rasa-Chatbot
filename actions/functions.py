@@ -1,7 +1,6 @@
 import pandas as pd
 import datetime
 from pyhive import hive
-import thrift_sasl 
 
 conn = hive.connect(host='dbsls0202',
             port=10308,
@@ -35,11 +34,23 @@ def get_by_name(date, status, jobname):
     return df
 
 def get_incident(date):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts like '%" + date + "%' AND incidentno IS NOT NULL LIMIT 30", conn)
+    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND incidentno IS NOT NULL LIMIT 30", conn)
     return df
 
 def get_restart(date):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts like '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
+    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
+    return df
+
+def get_latest_job_status_for_date(date, jobname):
+    df = pd.read_sql("SELECT status FROM ( SELECT *, ROW_NUMBER() over (PARTITION by jobname ORDER BY endts DESC) rn FROM audit.jobtracking WHERE mainkey LIKE '%" + jobname + "%' AND startts LIKE '%" + date + "%') t1 WHERE rn = 1", conn)
+    return df
+
+def get_run_time_for_date(date):
+    df = pd.read_sql("SELECT *, ((unix_timestamp(endts) - unix_timestamp(startts))/60) AS time_taken FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
+    return df
+
+def get_sub_jobs(date, jobname):
+    df = pd.read_sql("SELECT * FROM audit.jobtrackingdtl WHERE mainkey in ( SELECT mainkey FROM audit.jobtracking WHERE mainkey LIKE '%" + jobname + "%' AND startts LIKE '%" + date + "%' LIMIT 30) LIMIT 30", conn)
     return df
 
 def get_valid_status(status):
@@ -64,7 +75,7 @@ def get_valid_date(date):
             valid_date = datetime.date.today() - datetime.timedelta(days = 2)
         elif (date is "tomorrow"):
             valid_date = datetime.date.today() + datetime.timedelta(days = 1)
-        elif (date is "day of tomorrow"):
+        elif (date is "day after tomorrow"):
             valid_date = datetime.date.today() + datetime.timedelta(days = 1)
         else:
             valid_date = pd.to_datetime(date)
