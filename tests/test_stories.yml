@@ -124,15 +124,15 @@ stories:
       give me all jobs that failed for DM_ICUE on 2020-09-10    
     intent: job_status_name
   - action: action_job_name
-  # - user: |
-  #     give me the runtime of jobs on 2019-09-10
-  #   intent: job_runtime
-  # - action: action_runtime
-  # - user: |
-  #     give me all jobs that failed  DM_ICUE on 2020-09-10
-  #   intent: 
-  # - action:
-  # - user: |
-      
-  #   intent:
-  # - action:
+  - user: |
+      give me the runtime of jobs on 2019-09-10
+    intent: job_runtime
+  - action: action_run_time
+  - user: |
+      retrieve the details about sub-jobs of the main job CDB_ELIGIBILITY on date 2021-07-08
+    intent: sub_job_details
+  - action: action_sub_job
+  - user: |
+      show me the status of latest job MATCHING on 2021-03-21
+    intent: latest_job_status
+  - action: action_latest_job_status
