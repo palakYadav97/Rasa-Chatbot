@@ -37,7 +37,10 @@ intents:
     use_entities: true
 - job_runtime:
     use_entities: true
-
+- latest_job_status:
+    use_entities: true
+- sub_job_details:
+    use_entities: true
 entities:
 - limit
 - date
@@ -47,7 +50,7 @@ entities:
 slots: {}
 responses:
   utter_greet:
-  - text: Hey there! How can I help you?
+  - text: Hey there! This is DbBot. How can I help you?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -68,6 +71,8 @@ actions:
 - action_job_name
 - action_incidents
 - action_job_restart
-# - action_runtime
+- action_run_time
+- action_latest_job_status
+- action_sub_job
 forms: {}
 e2e_actions: []
