@@ -47,9 +47,9 @@ stories:
   - action: action_job_product
   - intent: job_status_name
   - action: action_job_name
-  # - intent: job_runtime
-  # - action: action_runtime
-  # - intent:
-  # - action:
-  # - intent:
-  # - action:
+  - intent: job_runtime
+  - action: action_run_time
+  - intent: sub_job_details
+  - action: action_sub_job
+  - intent: latest_job_status
+  - action: action_latest_job_status
