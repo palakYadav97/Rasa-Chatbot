@@ -18,27 +18,27 @@ def show_status(date, jobname):
     return df
 
 def get_all_jobs(date):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey, status FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' LIMIT 30", conn)
     return df
 
 def get_by_job_status(date, status):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND status LIKE '%" + status + "%' LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND status LIKE '%" + status + "%' LIMIT 30", conn)
     return df
 
 def get_by_product(date, status, product):    
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND status LIKE '%" + status + "%' AND product LIKE '%" + product + "%' LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND status LIKE '%" + status + "%' AND product LIKE '%" + product + "%' LIMIT 30", conn)
     return df
 
 def get_by_name(date, status, jobname):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND status LIKE '%" + status + "%' AND mainkey LIKE '%" + jobname + "%' LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND status LIKE '%" + status + "%' AND mainkey LIKE '%" + jobname + "%' LIMIT 30", conn)
     return df
 
 def get_incident(date):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND incidentno IS NOT NULL LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey, incidentno, status FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND incidentno IS NOT NULL LIMIT 30", conn)
     return df
 
 def get_restart(date):
-    df = pd.read_sql("SELECT * FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey, status, restartflag as restart FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
     return df
 
 def get_latest_job_status_for_date(date, jobname):
@@ -46,11 +46,11 @@ def get_latest_job_status_for_date(date, jobname):
     return df
 
 def get_run_time_for_date(date):
-    df = pd.read_sql("SELECT *, ((unix_timestamp(endts) - unix_timestamp(startts))/60) AS time_taken FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
+    df = pd.read_sql("SELECT mainkey, ((unix_timestamp(endts) - unix_timestamp(startts))/60) AS time_taken FROM audit.jobtracking WHERE startts LIKE '%" + date + "%' AND restartflag = 'Y' LIMIT 30", conn)
     return df
 
 def get_sub_jobs(date, jobname):
-    df = pd.read_sql("SELECT * FROM audit.jobtrackingdtl WHERE mainkey in ( SELECT mainkey FROM audit.jobtracking WHERE mainkey LIKE '%" + jobname + "%' AND startts LIKE '%" + date + "%' LIMIT 30) LIMIT 30", conn)
+    df = pd.read_sql("SELECT dtlkey, extractts, status FROM audit.jobtrackingdtl WHERE mainkey in ( SELECT mainkey FROM audit.jobtracking WHERE mainkey LIKE '%" + jobname + "%' AND startts LIKE '%" + date + "%' LIMIT 30) LIMIT 30", conn)
     return df
 
 def get_valid_status(status):
