@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - helllo
 - intent: goodbye
   examples: |
     - good afternoon
@@ -107,6 +108,8 @@ nlu:
     - please get me the status of [INDEX](jobname) job on [2020-09-09](date)
     - can i have the status of [SURVEY](jobname) on [15th feb 2020](date)?
     - can you show me the status of job [MATCHING](jobname) on [2021-03-27](date)?
+    - give me job status of MATCHING on [2021-01-21](limit)
+    - give me job status for MATCHING on [2021-01-21](limit)
 - intent: incidents_created
   examples: |
     - give me total number of incidents created on [jan 2nd, 2021](date)
@@ -172,6 +175,10 @@ nlu:
     - can i have the list of jobs [completed](status) on [3rd september 2020](date)?
     - can you show me all the [finished](status) jobs of [09 aug 2019](date)?
     - get me the records for [finished](status) jobs for [5th feb 2021](date)
+    - get me the records of jobs [finished](status) on [5th feb 2021](date)
+    - i need the list of jobs [failed](status) on [4 march 2021](date)
+    - I need the list of jobs [failed](status) on [4 march 2021](date)
+    - i need the list of jobs [failed](status) on [march 4 2021](date)
 - intent: job_status_product
   examples: |
     - give me total number of jobs [running](status) of product [Rally](product) on the date [2021-01-21](date)
@@ -207,6 +214,8 @@ nlu:
     - can i have the report of jobs [finished](status) on [2021-01-01](date) of [DIM](jobname)?
     - can you show me all the [completed](status) jobs of [ADHOC](jobname) on [6th july 2019](date)?
     - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [2021-01-21](date)
+    - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [21st](date) [Jan 2021](date)
+    - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [21 Jan 2021](date)
 - intent: job_runtime
   examples: |
     - what is the runtime of jobs on [2019-05-21](date)?
