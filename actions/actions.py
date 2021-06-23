@@ -19,7 +19,7 @@ class QueryByLimit(Action):
                 limit = t['value']
 
         df = limit_query(limit)
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying " + limit + " rows from the DB, here are your results \n" + str(df))
@@ -43,7 +43,7 @@ class QueryByDateAndKey(Action):
                 jobname = t['value']
 
         df = show_status(get_valid_date(date), jobname)
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -63,7 +63,7 @@ class QueryAllByDate(Action):
                 date = t['value']
 
         df = get_all_jobs(get_valid_date(date))
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -87,7 +87,7 @@ class QueryAllByDateAndStatus(Action):
                 status = t['value']
 
         df = get_by_job_status(get_valid_date(date), get_valid_status(status))
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -115,7 +115,7 @@ class QueryAllByDateStatusAndProduct(Action):
                 product = t['value']
 
         df = get_by_product(get_valid_date(date), get_valid_status(status), product)
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -143,7 +143,7 @@ class QueryAllByDateStatusAndJobName(Action):
                 jobname = t['value']
 
         df = get_by_name(get_valid_date(date), get_valid_status(status), jobname)
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -163,7 +163,7 @@ class QueryAllIncidentsByDate(Action):
                 date = t['value']
 
         df = get_incident(get_valid_date(date))
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -183,7 +183,7 @@ class QueryAllRestartJobsByDate(Action):
                 date = t['value']
 
         df = get_restart(get_valid_date(date))
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -208,7 +208,7 @@ class QueryLatestJobStatusForDate(Action):
                 jobname= t['value']
 
         df = get_latest_job_status_for_date(get_valid_date(date), jobname)
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -228,7 +228,7 @@ class QueryRunTimeAllByDate(Action):
                 date = t['value']
 
         df = get_run_time_for_date(get_valid_date(date))
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
@@ -253,7 +253,7 @@ class QuerySubJob(Action):
                 jobname= t['value']
 
         df = get_sub_jobs(get_valid_date(date), jobname)
-        if (len(df) is 0):
+        if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
         dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
