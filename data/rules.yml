@@ -62,7 +62,12 @@ rules:
   - intent: sub_job_details
   - action: action_sub_job
 
-- rule: If user asks for report of all jobs with jobname  of a date
+- rule: If user asks for report of all jobs with jobname of a date
   steps:
   - intent: latest_job_status
   - action: action_latest_job_status
+
+- rule: If user asks for path of a job
+  steps:
+  - intent: find_path
+  - action: action_path
