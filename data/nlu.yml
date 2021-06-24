@@ -265,6 +265,24 @@ nlu:
     - please tell me the details of sub jobs wrt [CDB](jobname) on [yesterday](date)
     - I need the details of subjobs of [ADHOC](jobname) for [day before yesterday](date)
     - I am looking for details of sub-jobs with respect to [MATCHING](jobname) for [Jan 20 2021](date)
+- intent: find_path
+  examples: |
+    - give me [destination](path) of [ADHOC_AYB_MONTHLY](jobname)
+    - show [target](path) path of [CS_IDT](jobname) 
+    - print [source](path) of [HEN_CDF](jobname) 
+    - extract [archive](path) path of configkey [ORI_CACHING](jobname) 
+    - give me the [destination](path) location of [POLARIS_ASO_PC](jobnae)
+    - fetch the [target](path) path of [POL_ASO_PC_ECG](jobname) configkey 
+    - give me [source](path) of [Polaris_CustXWalk](jobname) 
+    - give me the [archive](path) path for job [Polaris_CustXWalk_NextGen](jobname)
+    - I need the [target](path) location of job [Polaris_Elig](jobname)
+    - I am looking for the [destination](path) path for configkey [Polaris_Elig_CRP](jobname) 
+    - what is the [source](path) of configkey [Polaris_Elig_NextGen](jobname) ?
+    - What's the [archive](path) path of [Polaris_OCE](jobname) 
+    - please get me the [destination](path) path of [RALLY_C3SNI](jobname) 
+    - can i have the [archive](path) of configkey [RALLY_CDB](jobname)?
+    - can you show the [source](path) of [RALLY_CDOUTCOMES_ERG](jobname) ?
+    - give me the [target](path) location of [Polaris_Elig](jobname)
 - regex: pincode
   examples: |
     - \d{1,1000}
