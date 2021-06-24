@@ -41,12 +41,15 @@ intents:
     use_entities: true
 - sub_job_details:
     use_entities: true
+- find_path:
+    use_entities: true
 entities:
 - limit
 - date
 - product
 - status
 - jobname
+- path
 slots: {}
 responses:
   utter_greet:
@@ -74,5 +77,6 @@ actions:
 - action_run_time
 - action_latest_job_status
 - action_sub_job
+- action_path
 forms: {}
 e2e_actions: []
