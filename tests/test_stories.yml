@@ -136,3 +136,7 @@ stories:
       show me the status of latest job MATCHING on 2021-03-21
     intent: latest_job_status
   - action: action_latest_job_status
+  - user: |
+      what is the source of ADHOC_AYB
+    intent: find_path
+  - action: action_path
