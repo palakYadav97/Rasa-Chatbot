@@ -53,3 +53,5 @@ stories:
   - action: action_sub_job
   - intent: latest_job_status
   - action: action_latest_job_status
+  - intent: find_path
+  - action: action_path
