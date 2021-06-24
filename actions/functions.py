@@ -53,6 +53,10 @@ def get_sub_jobs(date, jobname):
     df = pd.read_sql("SELECT dtlkey, extractts, status FROM audit.jobtrackingdtl WHERE mainkey in ( SELECT mainkey FROM audit.jobtracking WHERE mainkey LIKE '%" + jobname + "%' AND startts LIKE '%" + date + "%' LIMIT 30) LIMIT 30", conn)
     return df
 
+def get_path(path, jobname):
+    df = pd.read_sql("SELECT " + path + " FROM audit.ecg WHERE configkey LIKE '%" + jobname + "%'", conn)
+    return df
+
 def get_valid_status(status):
     status.lower()
     if (status.find("run")!=-1 or status.find("start")!=-1):
@@ -83,3 +87,13 @@ def get_valid_date(date):
         return ""
     final_date = valid_date.strftime("%Y") + valid_date.strftime("-%m-") + valid_date.strftime("%d")
     return final_date
+
+def get_valid_path(path):
+    path.lower()
+    if (path.find("target")!=-1 or path.find("destination")!=-1):
+        path="destinationpath"
+    elif (path.find("archive")!=-1 or path.find("archived")!=-1):
+        path="archivepath"
+    elif (path.find("source")!=-1):
+        path="sourcepath"
+    return path
