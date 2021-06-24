@@ -4,6 +4,7 @@ from rasa_sdk.executor import CollectingDispatcher
 
 from functions import get_valid_status
 from functions import get_valid_date
+from functions import get_valid_path
 
 from functions import limit_query
 class QueryByLimit(Action):
@@ -22,7 +23,7 @@ class QueryByLimit(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying " + limit + " rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying " + limit + " rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import show_status
@@ -46,7 +47,7 @@ class QueryByDateAndKey(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_all_jobs
@@ -66,7 +67,7 @@ class QueryAllByDate(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
     
 from functions import get_by_job_status
@@ -90,7 +91,7 @@ class QueryAllByDateAndStatus(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_by_product
@@ -118,7 +119,7 @@ class QueryAllByDateStatusAndProduct(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_by_name
@@ -146,7 +147,7 @@ class QueryAllByDateStatusAndJobName(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_incident
@@ -166,7 +167,7 @@ class QueryAllIncidentsByDate(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_restart
@@ -186,7 +187,7 @@ class QueryAllRestartJobsByDate(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_latest_job_status_for_date
@@ -211,7 +212,7 @@ class QueryLatestJobStatusForDate(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_run_time_for_date
@@ -231,7 +232,7 @@ class QueryRunTimeAllByDate(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
 
 from functions import get_sub_jobs
@@ -256,5 +257,29 @@ class QuerySubJob(Action):
         if (len(df) == 0):
             dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no records exist for this request.\n")
             return []
-        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results \n" + str(df))
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
+        return []
+
+from functions import get_path,  get_valid_path
+class FindPath(Action):
+    def name(self) -> Text:
+        return "action_path"
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        path = ""
+        for t in tracker.latest_message['entities']:
+            if t['entity'] == 'path':
+                path = t['value']
+        jobname = ""
+        for t in tracker.latest_message['entities']:
+            if t['entity'] == 'jobname':
+                jobname = t['value']
+
+        df = get_path(get_valid_path(path), jobname)
+        if (len(df) == 0):
+            dispatcher.utter_message(text = "Hey, result not found! Either your input is wrong, or no path exists for this request.\n")
+            return []
+        dispatcher.utter_message(text = "Hey, so we are querying rows from the DB, here are your results : \n" + str(df))
         return []
