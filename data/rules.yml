@@ -71,3 +71,28 @@ rules:
   steps:
   - intent: find_path
   - action: action_path
+
+- rule: If user asks for notification status and feedname of a job
+  steps:
+  - intent: find_estatus_feedname
+  - action: action_estatus_feedname
+
+- rule: If user asks for email ids for a job
+  steps:
+  - intent: find_emails
+  - action: action_emails
+
+- rule: If user asks for file details for a key
+  steps:
+  - intent: find_extract
+  - action: action_extract
+
+- rule: If user asks for file details for a rally
+  steps:
+  - intent: find_rally
+  - action: action_rally
+
+- rule: If user asks for plans scheduled start time
+  steps:
+  - intent: find_planscheduledstarttime
+  - action: action_planscheduledstarttime
