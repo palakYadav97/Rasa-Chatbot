@@ -271,7 +271,7 @@ nlu:
     - show [target](path) path of [CS_IDT](jobname) 
     - print [source](path) of [HEN_CDF](jobname) 
     - extract [archive](path) path of configkey [ORI_CACHING](jobname) 
-    - give me the [destination](path) location of [POLARIS_ASO_PC](jobnae)
+    - give me the [destination](path) location of [POLARIS_ASO_PC](jobname)
     - fetch the [target](path) path of [POL_ASO_PC_ECG](jobname) configkey 
     - give me [source](path) of [Polaris_CustXWalk](jobname) 
     - give me the [archive](path) path for job [Polaris_CustXWalk_NextGen](jobname)
@@ -283,6 +283,113 @@ nlu:
     - can i have the [archive](path) of configkey [RALLY_CDB](jobname)?
     - can you show the [source](path) of [RALLY_CDOUTCOMES_ERG](jobname) ?
     - give me the [target](path) location of [Polaris_Elig](jobname)
+
+- intent: find_estatus_feedname
+  examples: |
+    - give me the [started](estatus) notifications status and feedname of all jobs [ADHOC_AYB_MONTHLY](jobname)
+    - show the status of [started](estatus) notifications and feedname of [ADHOC_AYB_DAILY](jobname) 
+    - print [started](estatus) notification status and feedname of all jobs of [CDR_BOSS_CNTC_PERS](jobname) 
+    - extract [started](estatus) notification's status and feedname of all jobs [CLINICAL_BIOMETRICS_REJECTS](jobname) 
+    - give me the feedname and status of [started](estatus) notifications of all jobs of [BIOMETRICS_REJECTS_UpdateTargetFileConfigTable](jobname)
+    - fetch the feedname and [completed](estatus) notification status of [C3_SNI](jobname) 
+    - give me feedname and [completed](estatus) notification status of [CDB_MBR_ELG](jobname) 
+    - give me the feedname and [completed](estatus) notification status for job [CDB_MED_COV](jobname)
+    - I need the [completed](estatus) notification status and feedname for [CDR_HSR_ASGN_RSGN](jobname)
+    - I am looking for the [restarted](estatus) notification status and feedname for job [C3_SNI](jobname) 
+    - what is the [restarted](estatus) notification status and feedname of [CDR_HSR_ASMT_AUD](jobname) ?
+    - What's the [restarted](estatus) notification status and feedname of [CDR_HSR_FLFL_REQ](jobname) 
+    - please get me the feedname and status of [restarted](estatus) notification for [CDR_HSR_HCPCS](jobname) 
+    - can i have the [failed](estatus) notification status and feedname of [CDR_HSR_MBR_CNTC_ID](jobname)?
+    - can you show the [failed](estatus) notification status of [RALLY_CDOUTCOMES_ERG](jobname) ?
+    - give me the feedname and [failed](estatus) notification status of [CDR_HSR_MBR_COV](jobname)
+    - [failed](estatus) notification status and feedname of the jobs [ADHOC_AYB_MONTHLY](jobname)
+    - give feedname and [failed](estatus) notification status of jobname [CDR_HSR_MBR_ID_REPL](jobname)
+    - status of [failed](estatus) notification and feedname of [CDR_HSR_PGM_MD_ASGN_LAB_TYP_LOINC_CD](jobname)
+
+- intent: find_emails
+  examples: |
+    - give external and internal email ids of job [ADHOC_AYB_MONTHLY](jobname)
+    - show email addresses for [ADHOC_AYB_DAILY](jobname) 
+    - print ext and int email id of job [CDR_BOSS_CNTC_PERS](jobname) 
+    - extract email addresses for job [CLINICAL_BIOMETRICS_REJECTS](jobname) 
+    - give all distinct emails of job [BIOMETRICS_REJECTS](jobname)
+    - fetch email ids for jobname [C3_SNI](jobname) 
+    - give me list of email ids for [CDB_MBR_ELG](jobname) 
+    - give me internal and external email ids for [CDB_MED_COV](jobname)
+    - I need the ext and int mail address of all jobs with jobname [CDR_HSR_ASGN_RSGN](jobname)
+    - I need the email ids of job [ADHOC](jobname)
+    - I am looking for the ext and int email addresses for jobname [C3_SNI](jobname) 
+    - what is the ext mail add of jobname [CDR_HSR_ASMT_AUD](jobname) ?
+    - What's the internal and external email of [CDR_HSR_FLFL_REQ](jobname) 
+    - please get me the int and ext email id of [CDR_HSR_HCPCS](jobname) 
+    - can i have the internal email address associated with [CDR_HSR_MBR_CNTC_ID](jobname)?
+    - can you show the internal email id of [RALLY_CDOUTCOMES_ERG](jobname) ?
+    - can you show the mail address of [RALLY_CDOUTCOMES](jobname) ?
+    - give me the internal and external mailing address of [CDR_HSR_MBR_COV](jobname)
+    - show me the email addresses of [CDR_HSR_COV](jobname)
+    - int and ext mail address of the jobs [ADHOC_AYB_MONTHLY](jobname)
+    - give int and ext mail id of jobname [CDR_HSR_MBR_ID_REPL](jobname)
+    - internal and external email id of [CDR_HSR_PGM_MD_ASGN_LAB_TYP_LOINC_CD](jobname)
+    - email addresses for [ADHOC_AYB](jobname)
+    - what are the mail ids for jobname [BIOMETRICS](jobname)
+    - please get me the list of email ids for [BIOMETRICS](jobname)
+
+- intent: find_extract
+  examples: |
+    - give me file [name](file) of key [MATCHING](jobname)
+    - show the [location](file) of the file of key [ADHOC_AYB](jobname)
+    - print the file [format](file) of key [CDBHistory](jobname)
+    - extract the file [frequency](file) for key [CLINICAL_HEALTH_SURVEY](jobname)
+    - fetch the file [location](file) of [IMDM_INDEX_SERVICE_DASHBOARD](jobname)
+    - I need the file [name](file) of [MATCHING](jobname) key
+    - I am looking for file [type](file) of [IMDM](jobname)
+    - what is the file [format](file) for [CDB](jobname) ?
+    - What's the file [frequency](file) of [CLINICAL](jobname) ?
+    - please get me the file [type](file) of [INDEX](jobname)
+    - can i have the file [name](file) of [SURVEY](jobname) ?
+    - can you show me the file [type](file) of key [MATCHING](jobname) ?
+    - get the file [type](file) of [ADHOC_AYB](jobname)
+    - get the [freq](file) of file [BIOMETRICS](jobname)
+    - show the [type](file) of file [MATCHING](jobname)
+    - what is the [location](file) of file [C3_SNI](jobname) ?
+    - I need the [format](file) of file [IMDM_MEMBER_INFO](jobname)
+
+- intent: find_rally
+  examples: |
+    - give me file [name](file) of rally [MATCHING](key)
+    - show the [location](file) of the file of rally [ADHOC_AYB](key)
+    - print the file [format](file) of rally [CDBHistory](key)
+    - extract the file [frequency](file) for rally [CLINICAL_HEALTH_SURVEY](key)
+    - fetch the file [location](file) of rally [IMDM_INDEX_SERVICE_DASHBOARD](key)
+    - I need the file [name](file) of rally [MATCHING](key) key
+    - I am looking for file [type](file) of rally [IMDM](key)
+    - what is the file [format](file) for rally [CDB](key) ?
+    - What's the file [frequency](file) of rally [CLINICAL](key) ?
+    - please get me the file [type](file) of rally [INDEX](key)
+    - can i have the file [name](file) of rally [SURVEY](key) ?
+    - can you show me the file [type](file) of rally [MATCHING](key) ?
+    - get the file [type](file) of rally [ADHOC_AYB](jobname)
+    - get the [freq](file) of rally [BIOMETRICS](jobname)
+    - show the [type](file) of rally [MATCHING](jobname)
+    - what is the [location](file) of rally [C3_SNI](jobname) ?
+    - I need the [format](file) of rally [IMDM_MEMBER_INFO](jobname)
+
+- intent: find_planscheduledstarttime
+  examples: |
+    - give me plan scheduled start time of jobname [ADHOC_AYB_DAILY_DRIVER](jobname) 
+    - show the planscheduledstarttime of job [ADHOC_AYB_MONTHLY_DRIVER](jobname) 
+    - print the plan scheduled start time of jobname [CDF_COMMON_TABS](jobname) 
+    - extract the start time of plan scheduled for jobname [CLINICAL_HEALTH_SURVEY](jobname) 
+    - fetch the plan scheduled start time of [CDF_CPM_MODULE](jobname) 
+    - I need the starting time of plan schedule of all jobs with [CDF_DIFFERENTIAL_MODULE](jobname) jobname 
+    - I am looking for plan scheduled start time of [CDF_ECG_CDM](jobname) 
+    - what is the plan scheduled start time for [CDF_ECG_CRP](jobname) ?
+    - What's the plan scheduled start time of [CDF_ENGAGE_MODULE](jobname) ?
+    - please get me the plan scheduled start time of [CDF_HSC_MODULE](jobname) 
+    - can i have the plan scheduled start time of [CDF_SQOOP_ENGAGE](jobname) ?
+    - can you show me the plan scheduled start time of job [CDF_SQOOP_FACET_ACCT](jobname) ?
+
+
 - regex: pincode
   examples: |
     - \d{1,1000}
