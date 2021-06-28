@@ -140,3 +140,24 @@ stories:
       what is the source of ADHOC_AYB
     intent: find_path
   - action: action_path
+  - user: |
+      what is the status of notification and feedname of ADHOC_AYB
+    intent: find_estatus_feedname
+  - action: action_estatus_feedname
+  - user: |
+      show email id of C3_SNI
+    intent: find_emails
+  - action: action_emails
+  - user: |
+      show the file location of BIOMETRICS
+    intent: find_extract
+  - action: action_extract
+  - user: |
+      show the file location of BIOMETRICS
+    intent: find_rally
+  - action: action_rally
+  - user: |
+      give the plan scheduled time of job ADHOC_AYB_DAILY_DRIVER
+    intent: find_planscheduledstarttime
+  - action: action_planscheduledstarttime
+
