@@ -43,6 +43,16 @@ intents:
     use_entities: true
 - find_path:
     use_entities: true
+- find_estatus_feedname:
+    use_entities: true
+- find_emails:
+    use_entities: true
+- find_extract:
+    use_entities: true
+- find_rally:
+    use_entities: true
+- find_planscheduledstarttime:
+    use_entities: true
 entities:
 - limit
 - date
@@ -50,6 +60,8 @@ entities:
 - status
 - jobname
 - path
+- estatus
+- file
 slots: {}
 responses:
   utter_greet:
@@ -78,5 +90,11 @@ actions:
 - action_latest_job_status
 - action_sub_job
 - action_path
+- action_estatus_feedname
+- action_emails
+- action_extract
+- action_rally
+- action_planscheduledstarttime
+
 forms: {}
 e2e_actions: []
