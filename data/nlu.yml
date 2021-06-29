@@ -389,6 +389,21 @@ nlu:
     - can i have the plan scheduled start time of [CDF_SQOOP_ENGAGE](jobname) ?
     - can you show me the plan scheduled start time of job [CDF_SQOOP_FACET_ACCT](jobname) ?
 
+- intent: find_planscheduledstarttime
+  examples: |
+    - give me plan scheduled start time of jobname [ADHOC_AYB_DAILY_DRIVER](jobname) 
+    - show the planscheduledstarttime of job [ADHOC_AYB_MONTHLY_DRIVER](jobname) 
+    - print the plan scheduled start time of jobname [CDF_COMMON_TABS](jobname) 
+    - extract the start time of plan scheduled for jobname [CLINICAL_HEALTH_SURVEY](jobname) 
+    - fetch the plan scheduled start time of [CDF_CPM_MODULE](jobname) 
+    - I need the starting time of plan schedule of all jobs with [CDF_DIFFERENTIAL_MODULE](jobname) jobname 
+    - I am looking for plan scheduled start time of [CDF_ECG_CDM](jobname) 
+    - what is the plan scheduled start time for [CDF_ECG_CRP](jobname) ?
+    - What's the plan scheduled start time of [CDF_ENGAGE_MODULE](jobname) ?
+    - please get me the plan scheduled start time of [CDF_HSC_MODULE](jobname) 
+    - can i have the plan scheduled start time of [CDF_SQOOP_ENGAGE](jobname) ?
+    - can you show me the plan scheduled start time of job [CDF_SQOOP_FACET_ACCT ](jobname) ?
+
 
 - regex: pincode
   examples: |
