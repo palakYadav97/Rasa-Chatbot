@@ -97,3 +97,7 @@ def get_valid_path(path):
     elif (path.find("source")!=-1):
         path="sourcepath"
     return path
+
+def get_planscheduledstarttime(jobname):
+    df = pd.read_sql("SELECT jobname, planscheduledstarttime FROM audit.sla WHERE jobname LIKE '%" + jobname + "%'", conn)
+    return df
