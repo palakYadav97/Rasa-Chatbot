@@ -492,7 +492,7 @@ def get_valid_date(date):
             valid_date = datetime.date.today() - datetime.timedelta(days = 2)
         elif (date.find("tomorrow")!=-1):
             valid_date = datetime.date.today() + datetime.timedelta(days = 1)
-        elif (date.find("day after tomorrow")!=-1):
+        elif (date.find("day-after-tomorrow")!=-1):
             valid_date = datetime.date.today() + datetime.timedelta(days = 2)
         else:
             valid_date = pd.to_datetime(date)
