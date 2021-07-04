@@ -213,9 +213,9 @@ nlu:
     - please get me the list of jobs [running](status) of [INFO](jobname) on [2nd june 2020](date)
     - can i have the report of jobs [finished](status) on [2021-01-01](date) of [DIM](jobname)?
     - can you show me all the [completed](status) jobs of [ADHOC](jobname) on [6th july 2019](date)?
-    - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [2021-01-21](date)
-    - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [21st](date) [Jan 2021](date)
-    - print all [completed](status) jobs of [ADHOC_AYB](jobname) on [21 Jan 2021](date)
+    - return the [completed](status) jobs of [ADHOC_AYB](jobname) on [2021-01-21](date)
+    - print all [failed](status) jobs of [ADHOC_AYB](jobname) on [21st Jan 2021](date)
+    - show the [finished](status) jobs of [ADHOC_AYB](jobname) on [21 Jan 2021](date)
 - intent: job_runtime
   examples: |
     - what is the runtime of jobs on [2019-05-21](date)?
@@ -223,17 +223,17 @@ nlu:
     - show me the run time of jobs on [feb 3 2020](date)
     - what's the runtime of jobs on [2020-02-17](date)?
     - show the time taken time by jobs on [2020-06-07](date)
-    - fetch the run time of jobs on [2019-05-25](date)
+    - fetch the run time of jobs on [25th may 2019](date)
     - extract the total time taken by jobs on [2020-12-16](date)
     - print the running time by jobs on [2019-06-07](date)
-    - I need the run time of jobs on [2021-02-14](date)
+    - I need the run time of jobs on [14 feb 2021](date)
     - get me the exact running time of jobs on [2020-11-29](date)
     - I am looking for the runtime of jobs on [2019-09-30](date)
-    - what is the time taken by jobs on [2020-02-28](date)?
+    - what is the time taken by jobs on [feb 28 2020](date)?
     - What's the running time of jobs on [2020-09-07](date)?
-    - please get me the time taken by jobs on [2019-01-31](date)
+    - please get me the time taken by jobs on [31st jan 2021](date)
     - can i have the runtime of jobs on [2020-09-07](date)?
-    - can you show me the time taken by jobs on [2019-08-21](date)?
+    - can you show me the time taken by jobs on [21 aug 2019](date)?
 - intent: latest_job_status
   examples: |
     - give me the status of latest job [MATCHING](jobname) on [2021-07-08](date)
@@ -387,17 +387,27 @@ nlu:
 - intent: query_link
   examples: |
     - give me link of jobname [IDT](jobname) 
-    - give me link for jobname [EPID](jobname)
+    - show the link for jobname [EPID](jobname)
     - link of jobname [EPID Policy Match](jobname)
-    - link associated with (EPID)[jobname]
+    - link associated with [EPID](jobname)
     - github link of [EPID Policy Match](jobname)
-    - dashboard link of (IDT)[jobname]jobname 
+    - dashboard link of [IDT](jobname) jobname 
+    - I need the link for job [MATCHING](jobname)
+    - Print the link of [ADHOC_AYB](jobname)
 
 - intent: help_me
   examples: |
     - @helpmebot
     - helpmebot
     - help
+    - i need help
+    - can you help 
+    - please help me
+    - pls help
+    - what are your commands?
+    - how can you help me?
+    - how do you work?
+    - I need your assistance
 
 - regex: pincode
   examples: |
