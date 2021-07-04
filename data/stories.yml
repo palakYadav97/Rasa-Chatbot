@@ -28,6 +28,11 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+  
+- story: help path
+  steps:
+  - intent: help_me
+  - action: utter_helpmebot
 
 - story: query path
   steps:
@@ -65,3 +70,5 @@ stories:
   - action: action_rally
   - intent: find_planscheduledstarttime
   - action: action_planscheduledstarttime
+  - intent: query_link
+  - action: action_query_link
