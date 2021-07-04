@@ -53,6 +53,10 @@ intents:
     use_entities: true
 - find_planscheduledstarttime:
     use_entities: true
+- query_link:
+    use_entities: true
+- help_me:
+    use_entities: true
 entities:
 - limit
 - date
@@ -62,6 +66,7 @@ entities:
 - path
 - estatus
 - file
+- key
 slots: {}
 responses:
   utter_greet:
@@ -77,6 +82,8 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_helpmebot:
+  - text: Alright! To see the full list, Click [here](https://github.com/palakYadav97/Rasa-Chatbot/blob/main/README.md)
 actions:
 - action_get_query
 - action_get_status
@@ -95,6 +102,6 @@ actions:
 - action_extract
 - action_rally
 - action_planscheduledstarttime
-
+- action_query_link
 forms: {}
 e2e_actions: []
