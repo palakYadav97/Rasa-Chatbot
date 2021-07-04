@@ -103,7 +103,7 @@ rules:
   - intent: find_planscheduledstarttime
   - action: action_planscheduledstarttime
 
-- rule: If user asks for plans scheduled start time
+- rule: If user asks for the link of a job
   steps:
   - intent: query_link
   - action: action_query_link
