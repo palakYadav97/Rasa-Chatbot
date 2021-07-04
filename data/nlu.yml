@@ -283,7 +283,6 @@ nlu:
     - can i have the [archive](path) of configkey [RALLY_CDB](jobname)?
     - can you show the [source](path) of [RALLY_CDOUTCOMES_ERG](jobname) ?
     - give me the [target](path) location of [Polaris_Elig](jobname)
-
 - intent: find_estatus_feedname
   examples: |
     - give me the [started](estatus) notifications status and feedname of all jobs [ADHOC_AYB_MONTHLY](jobname)
@@ -305,7 +304,6 @@ nlu:
     - [failed](estatus) notification status and feedname of the jobs [ADHOC_AYB_MONTHLY](jobname)
     - give feedname and [failed](estatus) notification status of jobname [CDR_HSR_MBR_ID_REPL](jobname)
     - status of [failed](estatus) notification and feedname of [CDR_HSR_PGM_MD_ASGN_LAB_TYP_LOINC_CD](jobname)
-
 - intent: find_emails
   examples: |
     - give external and internal email ids of job [ADHOC_AYB_MONTHLY](jobname)
@@ -333,7 +331,6 @@ nlu:
     - email addresses for [ADHOC_AYB](jobname)
     - what are the mail ids for jobname [BIOMETRICS](jobname)
     - please get me the list of email ids for [BIOMETRICS](jobname)
-
 - intent: find_extract
   examples: |
     - give me file [name](file) of key [MATCHING](jobname)
@@ -353,7 +350,6 @@ nlu:
     - show the [type](file) of file [MATCHING](jobname)
     - what is the [location](file) of file [C3_SNI](jobname) ?
     - I need the [format](file) of file [IMDM_MEMBER_INFO](jobname)
-
 - intent: find_rally
   examples: |
     - give me file [name](file) of rally [MATCHING](key)
@@ -373,7 +369,6 @@ nlu:
     - show the [type](file) of rally [MATCHING](jobname)
     - what is the [location](file) of rally [C3_SNI](jobname) ?
     - I need the [format](file) of rally [IMDM_MEMBER_INFO](jobname)
-
 - intent: find_planscheduledstarttime
   examples: |
     - give me plan scheduled start time of jobname [ADHOC_AYB_DAILY_DRIVER](jobname) 
@@ -388,6 +383,21 @@ nlu:
     - please get me the plan scheduled start time of [CDF_HSC_MODULE](jobname) 
     - can i have the plan scheduled start time of [CDF_SQOOP_ENGAGE](jobname) ?
     - can you show me the plan scheduled start time of job [CDF_SQOOP_FACET_ACCT](jobname) ?
+
+- intent: query_link
+  examples: |
+    - give me link of jobname [IDT](jobname) 
+    - give me link for jobname [EPID](jobname)
+    - link of jobname [EPID Policy Match](jobname)
+    - link associated with (EPID)[jobname]
+    - github link of [EPID Policy Match](jobname)
+    - dashboard link of (IDT)[jobname]jobname 
+
+- intent: help_me
+  examples: |
+    - @helpmebot
+    - helpmebot
+    - help
 
 - regex: pincode
   examples: |
