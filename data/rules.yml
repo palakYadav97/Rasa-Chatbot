@@ -7,6 +7,12 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+
+- rule: help if user asks for help
+  steps:
+  - intent: help_me
+  - action: utter_helpmebot
+
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
@@ -96,3 +102,8 @@ rules:
   steps:
   - intent: find_planscheduledstarttime
   - action: action_planscheduledstarttime
+
+- rule: If user asks for plans scheduled start time
+  steps:
+  - intent: query_link
+  - action: action_query_link
