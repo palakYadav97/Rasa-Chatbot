@@ -1,12 +1,15 @@
 # Rasa-Chatbot
 ## Table of Contents
-- [KaaS](#kaas)
-- [PRM](#prm)
+
+### Report of all jobs :- 
+
+- [Today or Yesterday](#Today_or_Yesterday)
+- [Based on Status](#Based-on-Status)
 - [Kafka Topics](#kafka-topics)
 - [Topic Describe and Conig](#Topic_Describe_and_Conig)
 
 
-### Report of all jobs :- 
+
 - [Today/Yesterday](##Today/Yesterdayy)
 - [Based on Status](##Based-on-Status)
 - [Based on Particular Product](##Based-on-Particular-Product)
@@ -64,5 +67,5 @@
 `To Describe topic follow below steps.` [Note]: Topic name `kaas.kaasbot.demo` is sample topic name, Replace it with your topic.
 - @Dbbot, describe a topic config
 - @Dbbot, kaas.kaasbot.demo
-## KaaS
+## Today_or_Yesterday
 - Is Kafka as a Service right for me
