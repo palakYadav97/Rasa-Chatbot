@@ -10,7 +10,6 @@
 - [Based on a Particular Mainkey](#Based-on-a-Particular-Mainkey)
 - [Find_status_of_job](#Find_status_of_job)
 - [Based-on-status-and-Mainkey](#Based-on-status-and-Mainkey)
-- [Find_status_of_job](#Find_status_of_job)
 - [Incidents_created](#Incidents_created)
 - [Restarted_jobs](#Restarted_jobs)
 - [Job_status_product](#Job_status_product)
@@ -84,12 +83,6 @@
 - print all jobs that failed of mainkey name IDT on 2019-06-19 
 - can you show me all the completed jobs of mainkey IDT today ? 
 
-
-## Find_status_of_job
-- extract the status for job CLINICAL_HEALTH_SURVEY yesterday
-- fetch the status of IMDM_INDEX_SERVICE_DASHBOARD on 2020-09-10
-- I need the status of MATCHING job on may 4 2021
-- I am looking for status of IMDM today
 
 ## Incidents_created
 - give me total number of incidents created on jan 2nd, 2021
