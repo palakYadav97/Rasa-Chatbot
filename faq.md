@@ -96,3 +96,4 @@ templates:
  - test interactive mode: rasa shell
  - run rasa using: rasa run
  - run actions server: rasa run actions
+ - run rasa x: rasa x
