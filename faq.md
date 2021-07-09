@@ -3,9 +3,9 @@
 This chatbot is developed using RASA Framework. This bot is created because the manual method of extracting the information might seem tedious and complicated. We now focus on what can be improved based on our previous method. It’s a time for us to learn from our past experiences with the objective of improving the way we work in future projects.
 
 ## Why Rasa?
-Rasa is an open source framework to develop assistant or chatbot. The most important difference between other chatbot frameworks like Google DialogFlow, MS LUIS and Rasa it that, in Rasa all the development, training and testing in Rasa can be done locally and data remains private to the organization or the user. You can select your model to train the data, make alterations if you are not satisfied with the result.
+Rasa is an open source framework to develop assistant or chatbot. The most important difference between other chatbot frameworks like Google DialogFlow, MS LUIS and Rasa is that, in Rasa all the development, training and testing in Rasa can be done locally and data remains private to the organization or the user. You can select your model to train the data, make alterations if you are not satisfied with the result.
 
-## What does this Robot is capable of?
+## What is this Bot capable of?
 
 
 ## Set up
@@ -28,7 +28,7 @@ cpython
 ```
 ## About Rasa
 
-There are many files generated after initialising Rasa. We will only be using a few of them.
+There are many files generated after initialising Rasa. Few of them are listed below:
 1. data/nlu.md
 
     This is the folder where you give examples of how the specific intents can be asked. For Intent (think of this as your intention to do something) like "greet", you would be asking "hi", "hello", "nice to meet you" and so on. This is where you list out these examples.
